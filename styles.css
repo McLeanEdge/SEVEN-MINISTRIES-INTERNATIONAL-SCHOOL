@@ -1,4 +1,127 @@
 /* =========================
+   NAVBAR – CLEAN & RESPONSIVE
+========================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 3000;
+  height: 70px;
+  background: rgba(2, 6, 23, 0.75);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(212,175,55,0.35);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.logo-text {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.logo-text span {
+  color: var(--gold);
+}
+
+/* MENU */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  list-style: none;
+}
+
+.nav-link {
+  color: rgba(255,255,255,0.85);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--gold);
+}
+
+/* BUTTON */
+.nav-btn {
+  padding: 0.55rem 1.2rem;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  color: #020617;
+  font-weight: 600;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 6px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(180deg, #020617, #020617);
+    flex-direction: column;
+    gap: 1.4rem;
+    padding: 2rem 0;
+
+    /* animation setup */
+    opacity: 0;
+    transform: translateY(-15px);
+    pointer-events: none;
+    transition: all 0.35s ease;
+  }
+
+  .nav-menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+
+
+/* =========================
    ROOT VARIABLES (BLUE + GOLD)
 ========================= */
 :root {
@@ -1084,18 +1207,35 @@ footer {
     box-shadow 0.3s ease,
     border 0.3s ease;
   border: 1px solid rgba(255,255,255,0.06);
+  }
+
+      /* Hover Effect */
+    .card:hover,
+    .event-card:hover,
+    .social-embed:hover,
+    .contact-form:hover,
+    .whatsapp-form:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+    border: 1px solid rgba(255,215,0,0.35);
+  }
+
+  .nav-menu li {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: all 0.3s ease;
 }
 
-    /* Hover Effect */
-   .card:hover,
-   .event-card:hover,
-   .social-embed:hover,
-   .contact-form:hover,
-   .whatsapp-form:hover {
-   transform: translateY(-6px) scale(1.02);
-   box-shadow: 0 18px 40px rgba(0,0,0,0.45);
-   border: 1px solid rgba(255,215,0,0.35);
-}
+  .nav-menu.active li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-menu.active li:nth-child(1) { transition-delay: 0.05s; }
+  .nav-menu.active li:nth-child(2) { transition-delay: 0.1s; }
+  .nav-menu.active li:nth-child(3) { transition-delay: 0.15s; }
+  .nav-menu.active li:nth-child(4) { transition-delay: 0.2s; }
+  .nav-menu.active li:nth-child(5) { transition-delay: 0.25s; }
 
 
 
