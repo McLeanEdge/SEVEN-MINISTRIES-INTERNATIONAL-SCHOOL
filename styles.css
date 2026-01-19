@@ -1237,8 +1237,14 @@ footer {
   .nav-menu.active li:nth-child(4) { transition-delay: 0.2s; }
   .nav-menu.active li:nth-child(5) { transition-delay: 0.25s; }
 
+    .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+     }
 
 
+ain
 
 
 }
