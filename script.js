@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!slides.length || !nextBtn || !prevBtn) return;
 
   let currentSlide = 0;
-  let autoSlide = setInterval(nextSlide, 5000);
+  autoSlide = setInterval(nextSlide, 5000);
+
 
   function showSlide(index) {
     slides.forEach(slide => slide.classList.remove('active'));

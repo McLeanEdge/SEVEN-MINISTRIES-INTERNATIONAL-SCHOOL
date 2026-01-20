@@ -48,7 +48,7 @@
       "addressLocality": "London, Accra",
       "addressCountry": "UK, Ghana"
     },
-    "email": "edu.sevenministries@gmail.com",
+    "email": "edu.sevenministry@gmail.com",
     "telephone": "+233257830152",
     "sameAs": [
       "https://www.facebook.com/sevenministriesschool",
@@ -59,8 +59,6 @@
   }
   </script>
   
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -86,8 +84,7 @@
       <li><a href="contact.html" class="nav-link">Contact</a></li>
     </ul>
     <button class="nav-btn">Apply Now</button>
-      <div class="hamburger" id="hamburger">      
-
+    <div class="hamburger">
       <div></div>
       <div></div>
       <div></div>
@@ -96,45 +93,53 @@
 </nav>
 
 <!-- Hero Section -->
-<section class="hero slider">
-  <div class="slide active" style="background-image:url('hero1.jpg')"></div>
-  <div class="slide" style="background-image:url('hero2.jpg')"></div>
-  <div class="slide" style="background-image:url('hero3.jpg')"></div>
-
-  <div class="hero-content">
-    <h1>Raising Godly Leaders for a Global Future</h1>
-    <p>
-      Seven Ministries International School delivers British & American
-      curriculum education with strong Christian values for children aged 3–18.
-    </p>
-    <a href="admissions.html" class="btn">Enroll Now</a>
+<section class="hero-section">
+  <div class="hero">
+    <h2>Raising Godly, Confident and Purpose‑Driven Leaders</h2>
+    <p>Quality British & American education for children aged 3–18, delivered safely online and in person.</p>
+    <div class="hero-buttons">
+      <a href="enrolment.html" class="btn primary-btn">Enroll Now</a>
+      <a href="about.html" class="btn secondary-btn">Learn More</a>
+    </div>
   </div>
-
-  <button class="slider-btn prev">&#10094;</button>
-  <button class="slider-btn next">&#10095;</button>
-
-  <div class="slider-dots"></div>
-
-
 </section>
 
-  <script>
-     const hamburger = document.getElementById('hamburger');
-     const navMenu = document.querySelector('.nav-menu');
-
-     hamburger.addEventListener('click', () => {
-     hamburger.classList.toggle('active');
-     navMenu.classList.toggle('active');
-
-
-     });
-
-    
-   </script>
-
-
-
-
+<!-- Featured Programs -->
+<section>
+  <h2 class="section-title">Our Premium Educational Services</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="card-icon">💻</div>
+      <h3>Online School</h3>
+      <p>Structured global learning from the comfort of home with certified teachers and interactive lessons.</p>
+      <a href="services.html#online-school" class="card-link">Learn More →</a>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏆</div>
+      <h3>After‑School Club</h3>
+      <p>Homework support and enrichment activities to reinforce daily learning.</p>
+      <a href="services.html#after-school" class="card-link">Learn More →</a>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚽</div>
+      <h3>Sports Club</h3>
+      <p>Physical wellness and discipline training to develop well-rounded individuals.</p>
+      <a href="services.html#sports-club" class="card-link">Learn More →</a>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎹</div>
+      <h3>Music Club</h3>
+      <p>Keyboard, piano and musical creativity to nurture artistic talents.</p>
+      <a href="services.html#music-club" class="card-link">Learn More →</a>
+    </div>
+    <div class="card">
+      <div class="card-icon">🎓</div>
+      <h3>Post‑Secondary Prep</h3>
+      <p>Academic and career readiness programs for university admission success.</p>
+      <a href="training.html" class="card-link">Learn More →</a>
+    </div>
+  </div>
+</section>
 
 <!-- Quick Links -->
 <section class="about-section">
@@ -196,7 +201,7 @@
 
 <!-- Call to Action -->
 <section class="about-section">
-  <div class="cta-box">
+  <div class="hero" style="text-align: center;">
     <h2>Ready to Begin Your Educational Journey?</h2>
     <p>Join our community of purpose-driven learners today</p>
     <div class="hero-buttons">
@@ -271,38 +276,6 @@
   </div>
 </section>
 
-
-<section class="contact-section">
-  <h2 class="section-title">Get in Touch</h2>
-
-  <div class="contact-grid">
-
-    <!-- CONTACT FORM -->
-    <form class="contact-form">
-      <h3>Contact Us</h3>
-
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-
-    <!-- WHATSAPP FORM -->
-    <div class="whatsapp-form">
-      <h3>Chat on WhatsApp</h3>
-      <p>Send us a quick message directly on WhatsApp.</p>
-
-      <input type="text" id="wa-name" placeholder="Your Name" />
-      <textarea id="wa-message" placeholder="Your Message"></textarea>
-
-      <button class="btn" onclick="sendWhatsApp()">Send via WhatsApp</button>
-    </div>
-
-  </div>
-</section>
-
-
 <!-- Social Media Embeds Section -->
 <section class="social-embeds-section">
   <h2 class="section-title">Connect With Us</h2>
@@ -343,28 +316,6 @@
 </section>
 
 <footer>
-
-  <div class="newsletter">
-    <h4>Subscribe to our Newsletter</h4>
-    <p>Get updates, events & announcements.</p>
-
-    <form class="newsletter-form">
-      <input type="email" placeholder="Your Email Address" required />
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
-
-
-  <a href="https://wa.me/233204820152" 
-     class="whatsapp-float" 
-     target="_blank"
-      aria-label="Chat on WhatsApp">
-
-    <span class="whatsapp-tooltip">Chat with us</span>
-   <i class="fab fa-whatsapp"></i>
-
-  </a>
-
   <div class="footer-content">
     <div class="footer-logo">
       <div class="logo-icon"><img src="logo.jpeg" alt="Seven Ministries Logo" style="width: 50px; height: 50px;" /></div>
@@ -400,7 +351,7 @@
       </div>
     </div>
     <div class="footer-contact">
-      <p>📧 edu.sevenministries@gmail.com | 📱 WhatsApp: +233204820152</p>
+      <p>📧 edu.sevenministry@gmail.com | 📱 WhatsApp: +233257830152</p>
       <div class="social-links">
         <a href="#" aria-label="YouTube"><i>📺</i></a>
         <a href="#" aria-label="Facebook"><i>📘</i></a>
@@ -410,60 +361,8 @@
       <p>© 2026 Seven Ministries International School. All rights reserved.</p>
     </div>
   </div>
-
-  <div class="newsletter reveal"></div>
-  <div class="footer-content reveal"></div>
-
-
-
-
-
 </footer>
 
-<script>
-const slides = document.querySelectorAll('.slide');
-const nextBtn = document.querySelector('.next');
-const prevBtn = document.querySelector('.prev');
-
-let currentSlide = 0;
-let autoSlide = setInterval(nextSlide, 5000);
-
-function showSlide(index) {
-  slides.forEach(slide => slide.classList.remove('active'));
-  slides[index].classList.add('active');
-
-  const heroContent = document.querySelector('.hero-content');
-  heroContent.style.animation = 'none';
-  heroContent.offsetHeight;
-  heroContent.style.animation = null;
-}
-
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  showSlide(currentSlide);
-}
-
-function prevSlide() {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  showSlide(currentSlide);
-}
-
-nextBtn.addEventListener('click', () => {
-  nextSlide();
-  resetAutoSlide();
-});
-
-prevBtn.addEventListener('click', () => {
-  prevSlide();
-  resetAutoSlide();
-});
-
-function resetAutoSlide() {
-  clearInterval(autoSlide);
-  autoSlide = setInterval(nextSlide, 5000);
-}
-
-
-
-</script></body>
+  <script src="script.js"></script>
+</body>
 </html>
