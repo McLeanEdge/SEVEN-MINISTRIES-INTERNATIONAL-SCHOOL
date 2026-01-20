@@ -309,3 +309,5 @@
   window.addEventListener('scroll', animateOnScroll);
   // Trigger once on load
   window.addEventListener('load', animateOnScroll);
+
+  
