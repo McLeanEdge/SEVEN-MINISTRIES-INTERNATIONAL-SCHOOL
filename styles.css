@@ -1763,3 +1763,56 @@ nav a:hover{
     font-size:2.2rem;
   }
 }
+
+
+/* =========================
+   HERO BACKGROUND IMAGE
+========================= */
+.hero-section {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* BACKGROUND IMAGE */
+  background: 
+    linear-gradient(
+      rgba(10, 26, 61, 0.75),
+      rgba(10, 26, 61, 0.75)
+    ),
+    url("hero1.jpg") center / cover no-repeat;
+
+  padding: 2rem;
+}
+
+/* TEXT STYLING */
+.hero {
+  max-width: 900px;
+  text-align: center;
+  color: #ffffff;
+  z-index: 2;
+}
+
+/* HEADLINE */
+.hero h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* PARAGRAPH */
+.hero p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  opacity: 0.95;
+}
+
+/* BUTTON WRAPPER */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
