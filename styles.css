@@ -1622,3 +1622,143 @@
       color: var(--charcoal);
       font-size: 0.8rem;
     }
+
+    :root{
+  --blue:#0a3d91;
+  --blue-dark:#071c3f;
+  --gold:#f5c542;
+
+  /* Glass */
+  --glass:rgba(255,255,255,0.65);
+  --glass-border:rgba(255,255,255,0.4);
+  --blur:blur(16px);
+
+  /* Text */
+  --text-dark:#1f2937;
+  --text-light:#4b5563;
+
+  /* Background */
+  --page-bg:linear-gradient(180deg,#f9fafb,#eef2f7);
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:var(--page-bg);
+  color:var(--text-dark);
+}
+
+/* ================= HEADER ================= */
+header{
+  padding:20px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(255,255,255,0.7);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(0,0,0,0.05);
+}
+
+nav a{
+  color:var(--blue);
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:500;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+/* ================= HERO ================= */
+.hero{
+  margin:40px auto;
+  max-width:1200px;
+  padding:90px 40px;
+  border-radius:28px;
+
+  background:
+    linear-gradient(
+      rgba(255,255,255,0.65),
+      rgba(255,255,255,0.65)
+    ),
+    url("assets/images/hero1.jpg") center/cover;
+
+  backdrop-filter:blur(10px);
+  box-shadow:0 25px 60px rgba(0,0,0,0.12);
+}
+
+.hero h1{
+  font-size:3rem;
+  max-width:720px;
+  color:var(--blue-dark);
+}
+
+.hero p{
+  max-width:600px;
+  color:var(--text-light);
+}
+
+/* ================= BUTTON ================= */
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:14px 36px;
+  border-radius:40px;
+  background:linear-gradient(90deg,var(--gold),#ffe08a);
+  color:#111;
+  font-weight:600;
+  text-decoration:none;
+  box-shadow:0 10px 25px rgba(245,197,66,.45);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 15px 35px rgba(245,197,66,.6);
+}
+
+/* ================= GLASS GRID ================= */
+.glass-grid{
+  max-width:1200px;
+  margin:70px auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:28px;
+  padding:0 20px;
+}
+
+/* ================= GLASS CARD ================= */
+.glass-card{
+  background:var(--glass);
+  backdrop-filter:var(--blur);
+  border-radius:22px;
+  padding:32px;
+  border:1px solid var(--glass-border);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.4);
+
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+
+.glass-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  .hero{
+    padding:60px 25px;
+  }
+
+  .hero h1{
+    font-size:2.2rem;
+  }
+}
