@@ -1851,3 +1851,40 @@ nav a:hover{
   }
 }
 
+.hero {
+  transition: 
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    border 0.4s ease;
+}
+
+.hero:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(95, 94, 19, 0.45); /* GOLD glow */
+
+  border: 1px solid rgba(212, 175, 55, 0.6);
+}
+
+.hero-buttons .btn {
+  position: relative;
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.hero-buttons .btn:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.35),
+    0 0 18px rgba(212, 175, 55, 0.6); /* GOLD glow */
+}
+
+.hero h2 {
+  background: linear-gradient(90deg, #d4af37, #ffffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
