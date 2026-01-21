@@ -1809,9 +1809,10 @@ nav a:hover{
   padding: 3rem 2.5rem;
 
   /* GLASS EFFECT */
+
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(1px);
 
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.25);
