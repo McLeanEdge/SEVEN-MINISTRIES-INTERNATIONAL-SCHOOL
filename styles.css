@@ -1967,7 +1967,7 @@ nav a:hover{
 
 .hero h2 {
   font-size: clamp(1.8rem, 4vw, 3rem);
-  line-height: 1.2;
+  line-height: 1.0;
 }
 
 .hero p {
@@ -1990,7 +1990,10 @@ nav a:hover{
 }
 
 .home-hero .hero {
-  max-width: 900px;
+  max-width: 800px;
   padding: 2rem;
   margin: auto;
 }
+
+
+
