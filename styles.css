@@ -1979,21 +1979,160 @@ nav a:hover{
   padding-top: 70px;
 }
 
-/* HOME HERO FIX */
-.home-hero {
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.slider-dots span {
+  width: 12px;
+  height: 12px;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-dots span.active {
+  background: #fff;
+}
+
+
+/* Home Page Hero - Only applies on home page */
+.home-page .hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  min-height: 90vh;
-  text-align: center;
+  background: url("images/home-1.jpg") center/cover no-repeat;
+  overflow: hidden;
 }
 
-.home-hero .hero {
+.home-page .hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.home-page .hero {
+  position: relative;
+  z-index: 2;
   max-width: 900px;
+  width: 90%;
   padding: 2rem;
-  margin: auto;
+  text-align: center;
+  color: #fff;
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
+.home-page .hero h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0;
+}
 
+.home-page .hero p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
 
+.home-page .hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.home-page .hero-buttons a {
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.home-page .primary-btn {
+  background-color: #0066cc;
+  color: #fff;
+}
+
+.home-page .primary-btn:hover {
+  background-color: #005bb5;
+}
+
+.home-page .secondary-btn {
+  background-color: #fff;
+  color: #0066cc;
+}
+
+.home-page .secondary-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Slider dots */
+.home-page .slider-dots {
+  position: absolute;
+  bottom: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.home-page .slider-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.home-page .slider-dots span.active {
+  background: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .home-page .hero h2 {
+    font-size: 1.8rem;
+  }
+  .home-page .hero p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page .hero h2 {
+    font-size: 1.6rem;
+  }
+  .home-page .hero p {
+    font-size: 0.9rem;
+  }
+  .home-page .hero-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-page .hero h2 {
+    font-size: 1.6rem;
+  }
+  .home-page .hero p {
+    font-size: 0.85rem;
+  }
+  .home-page .hero {
+    padding: 1.2rem;
+  }
+}
