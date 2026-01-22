@@ -2000,48 +2000,146 @@ nav a:hover{
   background: #fff;
 }
 
-/* Hero section - general */
+/* Home Page Hero - Only applies on home page */
 .home-page .hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("images/home-1.jpg") center/cover no-repeat;
+  overflow: hidden;
+}
+
+.home-page .hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.home-page .hero {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  width: 90%;
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  min-height: 80vh; /* Hero takes most of the viewport */
-  padding: 2rem;
-  box-sizing: border-box;
-  background-size: cover;
-  background-position: center;
-  color: #fff;
+  gap: 1.2rem;
 }
 
-/* Hero text */
-.home-page .hero-section .hero h2 {
-  font-size: 3rem;
+.home-page .hero h2 {
+  font-size: 2rem;
   line-height: 1.2;
-  margin-bottom: 1rem;
+  margin: 0;
 }
 
-.home-page .hero-section .hero p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin-bottom: 2rem;
+.home-page .hero p {
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-/* Hero buttons */
-.home-page .hero-section .hero-buttons a {
-  padding: 0.8rem 2rem;
-  margin: 0.5rem;
-  border-radius: 6px;
-  font-weight: 600;
+.home-page .hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.home-page .hero-buttons a {
+  padding: 0.8rem 1.6rem;
+  border-radius: 8px;
   text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-.home-page .hero-section .hero-buttons a.primary-btn {
+.home-page .primary-btn {
   background-color: #0066cc;
   color: #fff;
+}
+
+.home-page .primary-btn:hover {
+  background-color: #005bb5;
+}
+
+.home-page .secondary-btn {
+  background-color: #fff;
+  color: #0066cc;
+}
+
+.home-page .secondary-btn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Slider dots */
+.home-page .slider-dots {
+  position: absolute;
+  bottom: 2rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 2;
+}
+
+.home-page .slider-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.home-page .slider-dots span.active {
+  background: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .home-page .hero h2 {
+    font-size: 1.8rem;
+  }
+  .home-page .hero p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-page .hero h2 {
+    font-size: 1.6rem;
+  }
+  .home-page .hero p {
+    font-size: 0.9rem;
+  }
+  .home-page .hero-buttons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-page .hero h2 {
+    font-size: 1.3rem;
+  }
+  .home-page .hero p {
+    font-size: 0.85rem;
+  }
+  .home-page .hero {
+    padding: 1.2rem;
+  }
+}
+
+/* Only hero buttons on home page */
+.home-page .hero-section .hero-buttons a.primary-btn {
+  background-color: #0066cc;
+  color: #1a1a1a;
 }
 
 .home-page .hero-section .hero-buttons a.primary-btn:hover {
@@ -2050,57 +2148,10 @@ nav a:hover{
 
 .home-page .hero-section .hero-buttons a.secondary-btn {
   background-color: #fff;
-  color: #0066cc;
+  color: #1a1a1a;
 }
 
 .home-page .hero-section .hero-buttons a.secondary-btn:hover {
   background-color: #f0f0f0;
-}
-
-/* Responsive scaling for smaller screens */
-@media (max-width: 992px) {
-  .home-page .hero-section .hero h2 {
-    font-size: 2.5rem;
-  }
-  .home-page .hero-section .hero p {
-    font-size: 1.1rem;
-  }
-  .home-page .hero-section .hero-buttons a {
-    padding: 0.7rem 1.8rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .home-page .hero-section {
-    min-height: 70vh;
-    padding: 1.5rem;
-  }
-  .home-page .hero-section .hero h2 {
-    font-size: 2rem;
-  }
-  .home-page .hero-section .hero p {
-    font-size: 1rem;
-  }
-  .home-page .hero-section .hero-buttons a {
-    padding: 0.6rem 1.5rem;
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .home-page .hero-section {
-    min-height: 60vh;
-    padding: 1rem;
-  }
-  .home-page .hero-section .hero h2 {
-    font-size: 1.6rem;
-  }
-  .home-page .hero-section .hero p {
-    font-size: 0.9rem;
-  }
-  .home-page .hero-section .hero-buttons a {
-    padding: 0.5rem 1.2rem;
-    font-size: 0.85rem;
-  }
 }
 
