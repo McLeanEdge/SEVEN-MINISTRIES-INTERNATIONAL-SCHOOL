@@ -12,11 +12,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const hero = document.querySelector(".hero-section");
-
-  if (!hero) {
-    console.error("Hero section not found");
-    return;
-  }
+  const dotsContainer = document.querySelector(".slider-dots");
 
   const images = [
     "images/about-1.jpg",
@@ -25,14 +21,40 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   let index = 0;
+  let interval;
 
-  // set initial image immediately
-  hero.style.backgroundImage = `url('${images[0]}')`;
-
-  setInterval(() => {
-    index = (index + 1) % images.length;
+  function setSlide(i) {
+    index = i;
     hero.style.backgroundImage = `url('${images[index]}')`;
-  }, 5000);
+    updateDots();
+  }
+
+  function updateDots() {
+    document.querySelectorAll(".slider-dots span").forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  function startSlider() {
+    interval = setInterval(() => {
+      index = (index + 1) % images.length;
+      setSlide(index);
+    }, 5000);
+  }
+
+  // create dots
+  images.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => {
+      clearInterval(interval);
+      setSlide(i);
+      startSlider();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  setSlide(0);
+  startSlider();
 });
 </script>
 
@@ -77,6 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
       <h2>About Seven Ministries International School</h2>
       <p>Discover our Mission, Vision, and Commitment to excellence in christian education</p>
     </div>
+    <div class="slider-dots"></div>
+
   </section>
   
 

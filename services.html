@@ -11,11 +11,7 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const hero = document.querySelector(".hero-section");
-
-  if (!hero) {
-    console.error("Hero section not found");
-    return;
-  }
+  const dotsContainer = document.querySelector(".slider-dots");
 
   const images = [
     "images/services-1.jpg",
@@ -24,16 +20,43 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   let index = 0;
+  let interval;
 
-  // set initial image immediately
-  hero.style.backgroundImage = `url('${images[0]}')`;
-
-  setInterval(() => {
-    index = (index + 1) % images.length;
+  function setSlide(i) {
+    index = i;
     hero.style.backgroundImage = `url('${images[index]}')`;
-  }, 5000);
+    updateDots();
+  }
+
+  function updateDots() {
+    document.querySelectorAll(".slider-dots span").forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  function startSlider() {
+    interval = setInterval(() => {
+      index = (index + 1) % images.length;
+      setSlide(index);
+    }, 5000);
+  }
+
+  // create dots
+  images.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => {
+      clearInterval(interval);
+      setSlide(i);
+      startSlider();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  setSlide(0);
+  startSlider();
 });
 </script>
+
 
 
 <body>
@@ -70,6 +93,8 @@ document.addEventListener("DOMContentLoaded", function () {
       <h2>Our Premium Educational Services</h2>
       <p>Comprehensive learning solutions designed to nurture godly, confident leaders</p>
     </div>
+    <div class="slider-dots"></div>
+
   </section>
 
   <!-- Services Grid -->

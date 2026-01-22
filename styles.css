@@ -1565,6 +1565,7 @@
   box-sizing:border-box;
 }
 
+
 body{
   margin:0;
   font-family:'Segoe UI',sans-serif;
@@ -1909,3 +1910,44 @@ nav a:hover{
 }
 
 
+.slider-dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.slider-dots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-dots span.active {
+  background: #fff;
+  transform: scale(1.3);
+}
+
+
+/* ===== ABOUT PAGE NAVBAR FIX ===== */
+.about-page .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-page .nav-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.about-page .hamburger {
+  margin-left: auto;
+}

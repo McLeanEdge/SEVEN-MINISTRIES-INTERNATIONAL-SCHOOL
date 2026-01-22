@@ -66,30 +66,53 @@
 </head>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const hero = document.querySelector(".hero-section");
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero-section");
+  const dotsContainer = document.querySelector(".slider-dots");
 
-    if (!hero) {
-      console.error("Hero section not found");
-      return;
-    }
+  const images = [
+    "images/home-1.jpg",
+    "images/home-2.jpg",
+    "images/home-3.jpg"
+  ];
 
-    const images = [
-      "hero1.jpg",
-      "hero2.jpg",
-      "hero3.jpg"
-    ];
+  let index = 0;
+  let interval;
 
-    let index = 0;
+  function setSlide(i) {
+    index = i;
+    hero.style.backgroundImage = `url('${images[index]}')`;
+    updateDots();
+  }
 
-    setInterval(() => {
+  function updateDots() {
+    document.querySelectorAll(".slider-dots span").forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  function startSlider() {
+    interval = setInterval(() => {
       index = (index + 1) % images.length;
-      hero.style.backgroundImage = `url('${images[index]}')`;
+      setSlide(index);
     }, 5000);
+  }
+
+  // create dots
+  images.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => {
+      clearInterval(interval);
+      setSlide(i);
+      startSlider();
+    });
+    dotsContainer.appendChild(dot);
   });
+
+  setSlide(0);
+  startSlider();
+});
 </script>
-
-
 
 
 
@@ -136,6 +159,8 @@
       <a href="about.html" class="btn secondary-btn">Learn More</a>
     </div>
   </div>
+  <div class="slider-dots"></div>
+
 </section>
 
 <!-- Featured Programs -->
