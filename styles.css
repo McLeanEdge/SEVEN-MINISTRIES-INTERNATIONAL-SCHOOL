@@ -1974,3 +1974,23 @@ nav a:hover{
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   max-width: 700px;
 }
+
+.hero-section {
+  padding-top: 70px;
+}
+
+/* HOME HERO FIX */
+.home-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 90vh;
+  text-align: center;
+}
+
+.home-hero .hero {
+  max-width: 900px;
+  padding: 2rem;
+  margin: auto;
+}
