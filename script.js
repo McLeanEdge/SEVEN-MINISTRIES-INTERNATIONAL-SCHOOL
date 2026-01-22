@@ -310,4 +310,6 @@
   // Trigger once on load
   window.addEventListener('load', animateOnScroll);
 
+const slides = document.querySelectorAll('.slide');
+
   

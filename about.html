@@ -8,7 +8,36 @@
   <link rel="stylesheet" href="styles.css">
   
 </head>
-<body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero-section");
+
+  if (!hero) {
+    console.error("Hero section not found");
+    return;
+  }
+
+  const images = [
+    "images/about-1.jpg",
+    "images/about-2.jpg",
+    "images/about-3.jpg"
+  ];
+
+  let index = 0;
+
+  // set initial image immediately
+  hero.style.backgroundImage = `url('${images[0]}')`;
+
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    hero.style.backgroundImage = `url('${images[index]}')`;
+  }, 5000);
+});
+</script>
+
+
+<body class="about-page">
   <!-- Navigation -->
   <nav class="navbar">
     <div class="nav-container">
@@ -43,11 +72,13 @@
 
   <!-- Hero Section -->
   <section class="hero-section">
+
     <div class="hero">
       <h2>About Seven Ministries International School</h2>
       <p>Discover our Mission, Vision, and Commitment to excellence in christian education</p>
     </div>
   </section>
+  
 
   <!-- About Content -->
   <section class="about-section">
