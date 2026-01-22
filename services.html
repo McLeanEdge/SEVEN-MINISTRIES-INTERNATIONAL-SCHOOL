@@ -7,6 +7,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero-section");
+
+  if (!hero) {
+    console.error("Hero section not found");
+    return;
+  }
+
+  const images = [
+    "images/services-1.jpg",
+    "images/services-2.jpg",
+    "images/services-3.jpg"
+  ];
+
+  let index = 0;
+
+  // set initial image immediately
+  hero.style.backgroundImage = `url('${images[0]}')`;
+
+  setInterval(() => {
+    index = (index + 1) % images.length;
+    hero.style.backgroundImage = `url('${images[index]}')`;
+  }, 5000);
+});
+</script>
+
+
 <body>
   <!-- Navigation -->
   <nav class="navbar">
