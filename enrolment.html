@@ -7,6 +7,61 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero-section");
+  const dotsContainer = document.querySelector(".slider-dots");
+
+  const images = [
+    "images/enrolment-1.jpg",
+    "images/enrolment-2.jpg",
+    "images/enrolment-3.jpg",
+    "images/enrolment-4.jpg",
+    "images/enrolment-5.jpg"
+
+  ];
+
+  let index = 0;
+  let interval;
+
+  function setSlide(i) {
+    index = i;
+    hero.style.backgroundImage = `url('${images[index]}')`;
+    updateDots();
+  }
+
+  function updateDots() {
+    document.querySelectorAll(".slider-dots span").forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  function startSlider() {
+    interval = setInterval(() => {
+      index = (index + 1) % images.length;
+      setSlide(index);
+    }, 5000);
+  }
+
+  // create dots
+  images.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => {
+      clearInterval(interval);
+      setSlide(i);
+      startSlider();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  setSlide(0);
+  startSlider();
+});
+</script>
+
+
+
 <body>
   <!-- Navigation -->
   <nav class="navbar">
@@ -46,6 +101,8 @@
       <h2>Enrolment Forms</h2>
       <p>Begin your educational journey with Seven Ministries International School</p>
     </div>
+        <div class="slider-dots"></div>
+
   </section>
 
   <!-- Enrolment Tabs -->

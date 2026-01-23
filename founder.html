@@ -7,6 +7,56 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero-section");
+  const dotsContainer = document.querySelector(".slider-dots");
+
+  const images = [
+    "images/founder-1.jpg",
+    "images/founder-2.jpg",
+  ];
+
+  let index = 0;
+  let interval;
+
+  function setSlide(i) {
+    index = i;
+    hero.style.backgroundImage = `url('${images[index]}')`;
+    updateDots();
+  }
+
+  function updateDots() {
+    document.querySelectorAll(".slider-dots span").forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  function startSlider() {
+    interval = setInterval(() => {
+      index = (index + 1) % images.length;
+      setSlide(index);
+    }, 5000);
+  }
+
+  // create dots
+  images.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => {
+      clearInterval(interval);
+      setSlide(i);
+      startSlider();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  setSlide(0);
+  startSlider();
+});
+</script>
+
+
 <body>
   <!-- Navigation -->
   <nav class="navbar">
@@ -41,12 +91,19 @@
       <h2>About Our Founder</h2>
       <p>Meet Apostle Veronica Hadassah Jones, the visionary leader behind Seven Ministries International School</p>
     </div>
+        <div class="slider-dots"></div>
+
   </section>
 
   <!-- Founder Introduction -->
   <section>
     <div class="founder-container">
+            <div class="about-image">
+        <img src="founder.jpg" alt="founder" />
+      </div>
+
       <div class="founder-intro">
+        <p></p>
         <h3>Veronica Hadassah Jones</h3>
         <p class="founder-subtitle">Apostle, Prophet and Visionary Leader of the 21st Century</p>
         <p>Seven Ministries International is part of Veronica Hadassah Jones Ministries International. The Founder is Apostle Veronica Hadassah Jones.</p>
@@ -118,12 +175,12 @@
         </div>
       </div>
       <div class="footer-contact">
-        <p>📧 edu.sevenministry@gmail.com | 📱 WhatsApp: +233257830152</p>
+        <p>edu.sevenministries@gmail.com |  WhatsApp: +233257830152</p>
         <div class="social-links">
-          <a href="#" aria-label="YouTube"><i>📺</i></a>
-          <a href="#" aria-label="Facebook"><i>📘</i></a>
-          <a href="#" aria-label="Instagram"><i>📸</i></a>
-          <a href="#" aria-label="X (Twitter)"><i>🐦</i></a>
+          <a href="#" aria-label="YouTube"><i></i></a>
+          <a href="#" aria-label="Facebook"><i></i></a>
+          <a href="#" aria-label="Instagram"><i></i></a>
+          <a href="#" aria-label="X (Twitter)"><i></i></a>
         </div>
         <p>© 2026 Seven Ministries International School. All rights reserved.</p>
       </div>

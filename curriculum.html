@@ -7,6 +7,58 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero-section");
+  const dotsContainer = document.querySelector(".slider-dots");
+
+  const images = [
+    "images/curriculum-1.jpg",
+    "images/curriculum-2.jpg",
+    "images/curriculum-3.jpg",
+    "images/curriculum-4.jpg"
+  ];
+
+  let index = 0;
+  let interval;
+
+  function setSlide(i) {
+    index = i;
+    hero.style.backgroundImage = `url('${images[index]}')`;
+    updateDots();
+  }
+
+  function updateDots() {
+    document.querySelectorAll(".slider-dots span").forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  function startSlider() {
+    interval = setInterval(() => {
+      index = (index + 1) % images.length;
+      setSlide(index);
+    }, 5000);
+  }
+
+  // create dots
+  images.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.addEventListener("click", () => {
+      clearInterval(interval);
+      setSlide(i);
+      startSlider();
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  setSlide(0);
+  startSlider();
+});
+</script>
+
+
 <body>
   <!-- Navigation -->
   <nav class="navbar">
@@ -41,6 +93,8 @@
       <h2>International Curricula</h2>
       <p>World-class British and American educational frameworks with Christian values integration</p>
     </div>
+        <div class="slider-dots"></div>
+
   </section>
 
   <!-- Curriculum Overview -->
