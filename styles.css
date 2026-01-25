@@ -2240,3 +2240,51 @@ nav a:hover{
   color: #ffffff;
   text-decoration: underline;
 }
+
+.programs {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.program-card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.program-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.apply-btn {
+  display: block;
+  margin: 1.2rem auto 1.8rem;
+  padding: 14px 26px;
+  width: fit-content;
+  background: #0069be;
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.apply-btn:hover {
+  background: #76b857;
+  transform: scale(1.05);
+}
+
+/* Mobile safety */
+@media (max-width: 768px) {
+  .programs {
+    gap: 2rem;
+  }
+}
