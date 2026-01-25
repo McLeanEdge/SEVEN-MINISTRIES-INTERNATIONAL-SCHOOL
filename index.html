@@ -65,10 +65,16 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const hero = document.querySelector(".hero-section");
   const dotsContainer = document.querySelector(".slider-dots");
+
+  if (!hero || !dotsContainer) {
+    console.error("Hero or dots container not found");
+    return;
+  }
 
   const images = [
     "images/home-0.jpg",
@@ -83,7 +89,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function setSlide(i) {
     index = i;
-    hero.style.backgroundImage = `url('${images[index]}')`;
+    hero.style.backgroundImage = `url("${images[index]}")`;
+    hero.style.backgroundSize = "cover";
+    hero.style.backgroundPosition = "center";
     updateDots();
   }
 
