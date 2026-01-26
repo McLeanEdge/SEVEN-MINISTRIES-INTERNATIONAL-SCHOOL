@@ -2438,3 +2438,30 @@ nav a:hover{
     height: 3px;
   }
 }
+
+
+/* ===== HERO TEXT SCALE UP (MOBILE) ===== */
+@media (max-width: 768px) {
+
+  .hero h2 {
+    font-size: 2.1rem;   /* BIG headline */
+    line-height: 1.25;
+    font-weight: 700;
+  }
+
+  .hero p {
+    font-size: 1.1rem;   /* clear subtitle */
+    line-height: 1.6;
+    margin-top: 12px;
+  }
+}
+
+.hero h2 {
+  font-size: 2.4rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+
