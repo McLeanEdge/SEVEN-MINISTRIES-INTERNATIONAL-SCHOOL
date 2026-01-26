@@ -2399,3 +2399,42 @@ nav a:hover{
 .logo-sub {
   color: #1e3a8a !important;
 }
+
+/* ===== MOBILE HEADER SCALE UP ===== */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 14px 18px;
+  }
+
+  .nav-container {
+    min-height: 64px;
+  }
+
+  /* LOGO ICON */
+  .logo-icon img {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  /* LOGO TEXT */
+  .logo-text {
+    font-size: 1.1rem;
+    line-height: 1.2;
+  }
+
+  .logo-sub {
+    font-size: 0.85rem;
+    color: #2563eb; /* blue */
+  }
+
+  /* HAMBURGER */
+  .hamburger {
+    width: 34px;
+    height: 26px;
+  }
+
+  .hamburger div {
+    height: 3px;
+  }
+}
