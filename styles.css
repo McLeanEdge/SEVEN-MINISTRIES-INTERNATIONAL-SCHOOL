@@ -4,7 +4,7 @@
       --royal-blue: #0a2cff;
       --dark-blue: #061a66;
       --darker-blue: #040d3d;
-      --gold: #d4af37;
+      --gold: rgb(255, 196, 0);
       --dark-navy: #0a1a3d;
       --charcoal: #333333;
       --gray: #000000;
@@ -2393,4 +2393,9 @@ nav a:hover{
   .hero p {
     font-size: 1rem;
   }
+}
+
+
+.logo-sub {
+  color: #1e3a8a !important;
 }
