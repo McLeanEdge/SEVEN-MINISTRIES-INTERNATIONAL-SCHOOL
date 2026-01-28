@@ -1268,7 +1268,7 @@
       
       .hero-section {
         padding: 4rem 5% 3rem;
-        margin-top: 80px;
+        margin-top: 10px;
       }
       
       .hero h2 {
@@ -1627,7 +1627,7 @@ nav a:hover{
 /* ================= BUTTON ================= */
 .btn{
   display:inline-block;
-  margin-top:25px;
+  margin-top:0.1px;
   padding:14px 36px;
   border-radius:40px;
   background:linear-gradient(90deg,var(--gold),#ffe08a);
