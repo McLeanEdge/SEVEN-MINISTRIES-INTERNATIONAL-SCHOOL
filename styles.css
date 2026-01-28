@@ -2494,3 +2494,25 @@ nav a:hover{
   padding-left: 18px;
 }
 
+.fee-options {
+  max-width: 900px;
+  margin: 0 auto 60px;   /* pushes cards DOWN */
+  padding: 20px;
+  text-align: left;
+  position: relative;
+  z-index: 2;           /* keeps it ABOVE cards */
+}
+
+.fee-options p {
+  font-size: 1.25rem;   /* makes text bigger */
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .fee-options p {
+    font-size: 1.15rem;
+  }
+}
