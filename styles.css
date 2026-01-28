@@ -2516,3 +2516,9 @@ nav a:hover{
     font-size: 1.15rem;
   }
 }
+
+/* Push hero down below navbar */
+.service-hero {
+  margin-top: 90px; /* adjust if navbar is taller */
+}
+
