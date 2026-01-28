@@ -255,7 +255,7 @@
 
     .hero h2 {
       font-size: 3rem;
-      margin-bottom: 1.2rem;
+      margin-bottom: 551.2rem;
       color: var(--dark-navy);
       line-height: 1.2;
       max-width: 800px;
@@ -263,7 +263,8 @@
       margin-right: auto;
     }
 
-    .hero p {
+    .hero p {; 
+      
       font-size: 1.2rem;
       color: var(--gray);
       max-width: 700px;
@@ -2004,7 +2005,7 @@ nav a:hover{
 .home-page .hero-section {
   position: relative;
   width: 100%;
-  height: 155vh;
+  height: 95vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2456,69 +2457,51 @@ nav a:hover{
   }
 }
 
-/* ===== FORCE BIG HERO TEXT ON MOBILE ===== */
+
+/* =========================
+   HARD RESET HERO SPACING
+   ========================= */
+
+/* desktop + mobile */
+.hero-section.home-hero {
+  margin: 0 !important;
+  padding: 0 !important;
+  min-height: auto !important;
+  display: flex;
+  align-items: center;
+}
+
+/* NAVBAR OFFSET ONLY */
+.hero-section.home-hero {
+  padding-top: 80px !important;
+}
+
+/* HERO CARD */
+.hero-section.home-hero .hero {
+  margin: 0 auto !important;
+  padding: 32px 24px !important;
+  max-width: 900px;
+}
+
+/* MOBILE FIX */
 @media (max-width: 768px) {
 
-  .hero-section .hero h2 {
-    font-size: 2.1rem !important;
+  .hero-section.home-hero {
+    min-height: 70vh !important;
+    padding-top: 64px !important;
+  }
+
+  .hero-section.home-hero .hero {
+    padding: 22px 16px !important;
+  }
+
+  .hero-section.home-hero h2 {
+    font-size: 1.9rem !important;
     line-height: 1.25 !important;
-    font-weight: 800 !important;
   }
 
-  .hero-section .hero p {
-    font-size: 1.25rem !important;
-    line-height: 1.6 !important;
-    margin-top: 14px !important;
+  .hero-section.home-hero p {
+    font-size: 1.05rem !important;
   }
-}
-
-.donate-page {
-  max-width: 900px;
-  margin: 80px auto;
-  padding: 20px;
-}
-
-.donate-page h1 {
-  font-size: 2.4rem;
-  margin-bottom: 15px;
-}
-
-.fee-block {
-  background: #f9f9f9;
-  padding: 20px;
-  border-radius: 12px;
-  margin-bottom: 25px;
-}
-
-.fee-block ul {
-  padding-left: 18px;
-}
-
-.fee-options {
-  max-width: 900px;
-  margin: 0 auto 60px;   /* pushes cards DOWN */
-  padding: 20px;
-  text-align: left;
-  position: relative;
-  z-index: 2;           /* keeps it ABOVE cards */
-}
-
-.fee-options p {
-  font-size: 1.25rem;   /* makes text bigger */
-  line-height: 1.8;
-  margin-bottom: 20px;
-  color: #222;
-}
-
-/* Mobile fix */
-@media (max-width: 768px) {
-  .fee-options p {
-    font-size: 1.15rem;
-  }
-}
-
-/* Push hero down below navbar */
-.service-hero {
-  margin-top: 90px; /* adjust if navbar is taller */
 }
 
